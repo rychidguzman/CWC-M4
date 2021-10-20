@@ -24,8 +24,8 @@ struct RecipeDetailView: View {
                     Text("Ingredients")
                         .font(.headline)
                         .padding(.bottom, 5.0)
-                    ForEach (recipe.ingredients, id:\.self) { index in
-                        Text("• " + index)
+                    ForEach (recipe.ingredients) { index in
+                        Text("• " + index.name)
                     }
                     
                     // MARK: Divider
