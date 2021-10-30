@@ -19,6 +19,7 @@
 		DE3CC5D9272AF68000D19BC9 /* Rational.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3CC5D8272AF68000D19BC9 /* Rational.swift */; };
 		DE59F1982715C403003A24A8 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE59F1972715C403003A24A8 /* RecipeDetailView.swift */; };
 		DE837CFC271E9B3200BEA24A /* RecipeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE837CFB271E9B3200BEA24A /* RecipeTabView.swift */; };
+		DEC1F3E2272D8211009E9915 /* RecipeHighlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1F3E1272D8211009E9915 /* RecipeHighlights.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		DE3CC5D8272AF68000D19BC9 /* Rational.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rational.swift; sourceTree = "<group>"; };
 		DE59F1972715C403003A24A8 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		DE837CFB271E9B3200BEA24A /* RecipeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabView.swift; sourceTree = "<group>"; };
+		DEC1F3E1272D8211009E9915 /* RecipeHighlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeHighlights.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				DE59F1972715C403003A24A8 /* RecipeDetailView.swift */,
 				DE837CFB271E9B3200BEA24A /* RecipeTabView.swift */,
 				DE160D28271FFE8500351554 /* RecipeFeaturedView.swift */,
+				DEC1F3E1272D8211009E9915 /* RecipeHighlights.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			files = (
 				DE345A1C2714020A00F89221 /* Recipe.swift in Sources */,
 				DE59F1982715C403003A24A8 /* RecipeDetailView.swift in Sources */,
+				DEC1F3E2272D8211009E9915 /* RecipeHighlights.swift in Sources */,
 				DE3CC5D9272AF68000D19BC9 /* Rational.swift in Sources */,
 				DE345A1E271403B300F89221 /* RecipeModel.swift in Sources */,
 				DE345A092714006400F89221 /* RecipeListView.swift in Sources */,

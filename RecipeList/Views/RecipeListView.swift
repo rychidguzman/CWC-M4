@@ -33,8 +33,15 @@ struct RecipeListView: View {
                                     .frame(width: 50, height: 50, alignment: .center)
                                     .clipped()
                                     .cornerRadius(5.0)
-                                Text(r.name)
-                                    .foregroundColor(.black)
+                                VStack(alignment: .leading){
+                                    Text(r.name)
+                                        .bold()
+                                        .foregroundColor(.black)
+                                    RecipeHighlights(hightLights: r.highlights)
+                                        .foregroundColor(.black)
+                                }
+                                
+                                
                             }
                         }      
                     }.navigationBarHidden(true)
