@@ -10,6 +10,7 @@ import SwiftUI
 struct RecipeFeaturedView: View {
     
     @EnvironmentObject var model:RecipeModel
+    @State var isDetailViewShowing:Bool = false
     
     var body: some View {
         
@@ -22,36 +23,45 @@ struct RecipeFeaturedView: View {
                 .padding(.top, 40)
             
             GeometryReader{ geo in
-                    
+                
                 TabView{
-                        
+                    
                     ForEach(0..<model.recipes.count) { index in
                         
-                            if model.recipes[index].featured == true {
+                        if model.recipes[index].featured == true {
+                            
+                            //Button for showing the detail view
+                            Button {
+                                isDetailViewShowing = true
+                            } label: {
                                 ZStack{
                                     Rectangle()
                                         .foregroundColor(Color.white)
-                                        VStack(spacing: 0){
-                                            Image(model.recipes[index].image)
-                                                .resizable()
-                                                .aspectRatio(contentMode:  .fill)
-                                                .clipped()
-                                                
-                                            Text(model.recipes[index].name)
-                                                .padding()
-                                            
-                                        }
-                                        .padding(.bottom)
+                                    VStack(spacing: 0){
+                                        Image(model.recipes[index].image)
+                                            .resizable()
+                                            .aspectRatio(contentMode:  .fill)
+                                            .clipped()
+                                        
+                                        Text(model.recipes[index].name)
+                                            .padding()
+                                        
+                                    }
                                 }
-                                .frame(width: geo.size.width-40, height: geo.size.height-100, alignment: .center)
-                                .cornerRadius(15)
-                                .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5), radius: 10, x: -10, y: 10)
                             }
+                            .sheet(isPresented: $isDetailViewShowing){
+                                RecipeDetailView(recipe: model.recipes[index])
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            .frame(width: geo.size.width-40, height: geo.size.height-100, alignment: .center)
+                            .cornerRadius(15)
+                            .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.5), radius: 10, x: -10, y: 10)
+                        }
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-                    
+                
             }
             
             VStack(alignment: .leading, spacing: 10){

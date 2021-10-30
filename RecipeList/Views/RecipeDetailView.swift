@@ -19,8 +19,13 @@ struct RecipeDetailView: View {
             Image(recipe.image)
                 .resizable()
                 .scaledToFill()
+            
             //MARK: Serving
-            VStack{
+            VStack(alignment: .leading){
+                Text(recipe.name)
+                    .bold()
+                    .font(.largeTitle)
+                    .padding(.bottom, 10)
                 Text("Select your Serving:")
                 Picker("", selection: $serving){
                     Text("2").tag(2)
@@ -29,8 +34,9 @@ struct RecipeDetailView: View {
                     Text("8").tag(8)
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                .frame(width: 160)
             }
+            .padding([.leading, .trailing], 10)
+            
             VStack(alignment: .leading){
                 
                 VStack(alignment: .leading) {
@@ -55,15 +61,10 @@ struct RecipeDetailView: View {
                     ForEach(0..<recipe.directions.count, id:\.self) { index in
                         Text(String(index+1) + ". " + recipe.directions[index])
                             .padding(.bottom, 1.0)
-                    }
-                    
-                
-            }
+                    }    
+                }
             }
             .padding(.horizontal)
-            
-            
-            
         }
     }
 }

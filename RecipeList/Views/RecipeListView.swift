@@ -36,12 +36,7 @@ struct RecipeListView: View {
                                 Text(r.name)
                                     .foregroundColor(.black)
                             }
-                        }
-                        
-                        
-                        
-                        
-                        
+                        }      
                     }.navigationBarHidden(true)
                 }
                 .padding(.leading)
