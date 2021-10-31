@@ -19,7 +19,7 @@ struct RecipeFeaturedView: View {
             
             Text("Featured Recipes")
                 .bold()
-                .font(.largeTitle)
+                .font(Font.custom("Avenir Heavy", size: 24))
                 .padding(.leading)
                 .padding(.top, 40)
             
@@ -46,6 +46,7 @@ struct RecipeFeaturedView: View {
                                         
                                         Text(model.recipes[index].name)
                                             .padding()
+                                            .font(Font.custom("Avenir Book", size: 17))
                                         
                                     }
                                 }
@@ -67,11 +68,11 @@ struct RecipeFeaturedView: View {
             }
             
             VStack(alignment: .leading, spacing: 10){
-                Text("Preparation Time")
-                    .font(.headline)
+                Text("Preparation Time:")
+                    .font(Font.custom("Avenir Heavy", size: 18))
                 Text(model.recipes[tabSelectionIndex].prepTime)
-                Text("Highlights")
-                    .font(.headline)
+                Text("Highlights:")
+                    .font(Font.custom("Avenir Heavy", size: 18))
                 RecipeHighlights(hightLights: model.recipes[tabSelectionIndex].highlights)
             }
             .padding([.leading, .bottom])

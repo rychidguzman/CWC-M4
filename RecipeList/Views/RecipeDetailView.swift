@@ -24,15 +24,17 @@ struct RecipeDetailView: View {
             VStack(alignment: .leading){
                 Text(recipe.name)
                     .bold()
-                    .font(.largeTitle)
+                    .font(Font.custom("Avenir Heavy", size: 24))
                     .padding(.bottom, 10)
                 Text("Select your Serving:")
+                    .font(Font.custom("Avenir Book", size: 17))
                 Picker("", selection: $serving){
                     Text("2").tag(2)
                     Text("4").tag(4)
                     Text("6").tag(6)
                     Text("8").tag(8)
                 }
+                .font(Font.custom("Avenir Book", size: 13))
                 .pickerStyle(SegmentedPickerStyle())
             }
             .padding([.leading, .trailing], 10)
@@ -42,10 +44,11 @@ struct RecipeDetailView: View {
                 VStack(alignment: .leading) {
                     // MARK: Ingredients
                     Text("Ingredients")
-                        .font(.headline)
+                        .font(Font.custom("Avenir Heavy", size: 18))
                         .padding(.bottom, 5.0)
                     ForEach (recipe.ingredients) { index in
                         Text("• " + RecipeModel.getServing(ingredient: index, recipeServing: recipe.servings, targetServing: serving) + " " + index.name.lowercased())
+                            .font(Font.custom("Avenir Book", size: 16))
                     }
                     
                     // MARK: Divider
@@ -56,11 +59,12 @@ struct RecipeDetailView: View {
                 VStack(alignment: .leading){
                     // MARK: Directions
                     Text("Direction")
-                        .font(.headline)
                         .padding(.vertical, 5.0)
+                        .font(Font.custom("Avenir Heavy", size: 18))
                     ForEach(0..<recipe.directions.count, id:\.self) { index in
                         Text(String(index+1) + ". " + recipe.directions[index])
                             .padding(.bottom, 1.0)
+                            .font(Font.custom("Avenir Book", size: 16))
                     }    
                 }
             }
